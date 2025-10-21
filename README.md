@@ -1,6 +1,6 @@
 # Node.js Demo App
 
-A simple Node.js application with Express, Docker, and CI/CD setup using Jenkins .
+A simple Node.js application with Express, Docker, and CI/CD setup using Jenkins.
 
 ## Table of Contents
 - [Installation](#installation)
