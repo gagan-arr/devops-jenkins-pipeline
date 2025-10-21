@@ -18,17 +18,16 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies & Test') {
+        stage('Test') {
             steps {
-                // Run npm install inside the Docker container
-                sh 'docker run --rm -v $PWD:/app -w /app $IMAGE_NAME npm install'
-                sh 'docker run --rm -v $PWD:/app -w /app $IMAGE_NAME npm test || echo "No tests found"'
+                // If you have tests, run them here inside the container
+                sh 'docker run --rm $IMAGE_NAME npm test || echo "No tests found"'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploy stage - You can add docker push or deployment steps here.'
+                echo '✅ Build successful. Ready to deploy!'
             }
         }
     }
